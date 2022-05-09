@@ -1,0 +1,104 @@
+/* form layout */
+/* maybe we should move row/field layout to different file */
+.form-section + .form-section {
+  margin-top: var(--gutter);
+}
+
+.form-row {
+  display: flex;
+  .form-field {
+    display:flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    &.inline {
+      label {
+        flex: 1;
+        padding-bottom: 0;
+        margin-right: var(--gutter);
+      }
+      input {
+        flex: 1;
+      }
+    }
+    &.ghost-label { /* should improve this declaration */
+      margin-top: calc(calc(var(--lineHeight) * 1em) + 4px);
+    }
+    + .form-field {
+      margin-left: 15px;
+    }
+  }
+  + .form-row:not(.no-margin) { /* should declare this as data attr like grid */
+    margin-top: calc(var(--gutter) / 2);
+  }
+}
+
+.feedback {
+  flex-basis: 100%;
+  font-size: .8em;
+  line-height: 1.4em;
+  margin-top: .25em;
+  color: var(--feedback-color);
+}
+
+/* actual from controls */
+
+select {
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  background: #eee url(../images/arrow-down.svg) no-repeat right 2em center;
+  background-size: 12px auto;
+  -webkit-appearance: none;
+  padding: .6em 2.5em .6em 1em;
+  text-overflow: ellipsis;
+  option {
+    font-weight: normal;
+  }
+  /* TODO we should make this more customizable */
+  &.has-icon_location {
+    background-image: url(../images/arrow-down.svg), url(../images/marker.svg);
+    background-position: right 1em center, 1em center;
+    padding-left: 2.5em;
+  }
+}
+
+label {
+  width: 100%;
+  padding-bottom: 4px;
+  .radio-label {
+    padding-top: 4px;
+  }
+}
+
+input {
+  width: 100%;
+  padding: .6em 1em;
+  border-radius: 0;
+  border: 1px solid #000;
+  max-width: 320px;
+}
+
+input[type="time"] {
+  width: auto;
+}
+
+fieldset {
+  legend {
+    margin-bottom: 8px;
+  }
+  .form-row {
+    margin-left: 8px;
+    + .form-row:not(.no-margin) {
+      margin-top: 5px;
+    }
+  }
+}
+
+input[type="checkbox"], input[type="radio"] {
+  width: auto;
+  align-self: center;
+  margin-right: 5px;
+}
+
+

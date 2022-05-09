@@ -1,0 +1,159 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body, html {
+	height: 100%;
+}
+
+main {
+	width: 100%;
+}
+
+:root {
+	/* grid */
+	--cols: 1;
+	--gutter: 15px;
+
+	/* sizing	 */
+	--font-size: 16px;
+	--padding: 10px;
+	--lightness: 50%;
+
+	/* breakpoints */
+	/* --small: 767px;
+	--medium: 992px;
+	--large: 1200px; */
+
+	/* base color */
+	--color-primary: #123A29;
+	--color-secundary: #EFCF9C;
+	--color-neutral: #212121;
+
+	/* primary tint */
+	--color-primary-10: #e7ebea;
+	--color-primary-20: #b8c4bf;
+	--color-primary-30: #899d94;
+	--color-primary-40: #71897f;
+	--color-primary-50: #2a4e3e;
+	--color-primary-60: #103425;
+	--color-primary-70: #0d291d;
+	--color-primary-80: #091d15;
+	--color-primary-90: #05110c;
+	--color-primary-100: #020604;
+
+	/* secundary tint */
+	--color-secundary-10: #fdfaf5;
+	--color-secundary-20: #faf1e1;
+	--color-secundary-30: #f7e7ce;
+	--color-secundary-40: #f4ddba;
+	--color-secundary-50: #f1d4a6;
+	--color-secundary-60: #d7ba8c;
+	--color-secundary-70: #a7916d;
+	--color-secundary-80: #78684e;
+	--color-secundary-90: #483e2f;
+	--color-secundary-100: #181510;
+
+	/* neutral tints */
+	--color-neutral-shade-20: #1e1e1e;
+	--color-neutral-shade-40: #171717;
+	--color-neutral-shade-60: #111111;
+	--color-neutral-shade-80: #0a0a0a;
+	--color-neutral-shade-100: #030303;
+	--color-neutral-tint-20: #373737;
+	--color-neutral-tint-40: #646464;
+	--color-neutral-tint-60: #909090;
+	--color-neutral-tint-80: #bcbcbc;
+	--color-neutral-tint-100: #e9e9e9;
+
+	/* feedback */
+	--succes: green;
+	--warning: yellow;
+	--error: red;
+	--info: blue;
+
+	/* shadows */
+	--box-shadow: 2px 2px 20px 5px #DBDBDB;
+	--hover-brightness: 0.8;
+
+	/* border */
+	--border-color: var(--color-primary);
+	--border-width: 1px;
+	--border-style: solid;
+	--border-radius: 0;
+	--border: var(--border-width) var(--border-color) var(--border-style)
+}
+
+@media(min-width: 767px) {
+	:root {
+		--cols: 6;
+	}
+}
+
+h1 {
+    font-size: calc(var(--font-size) * 4.209);
+}
+
+h2 {
+    font-size: calc(var(--font-size) * 3.157);
+}
+
+h3 {
+    font-size: calc(var(--font-size) * 2.369);
+}
+
+h4 {
+    font-size: calc(var(--font-size) * 1.777);
+}
+
+h5 {
+    font-size: calc(var(--font-size) * 1.333);
+}
+
+p {
+    font-size: calc(var(--font-size) * 1);
+}
+
+.btn-solid {
+	display: none;
+}
+
+.visually-hidden {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+/* basic page styling */
+body {
+	background: white;
+	-webkit-font-smoothing: antialiased;
+	overflow-x:hidden;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+main .container {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+section + section {
+	margin-top: calc(var(--gutter)*2);
+}
+
+twopine-preloader twopine-button {
+	--color-primary: white;
+}
+
+.p-4 {
+	padding: calc(var(--padding) * 4);
+}
